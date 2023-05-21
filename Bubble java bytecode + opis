@@ -1,0 +1,156 @@
+// class version 64.0 (64)
+// access flags 0x21
+public class Bubble {
+
+  // compiled from: Bubble.java
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 1 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V   // Wywołanie konstruktora klasy Object
+    RETURN                                      // Zakończenie konstruktora
+   L1
+    LOCALVARIABLE this LBubble; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x8
+  static bubbleSort([I)V
+   L0
+    LINENUMBER 3 L0
+    ALOAD 0
+    ARRAYLENGTH // Załaduj długość tablicy na stos
+    ISTORE 1 // Zapisz długość tablicy do zmiennej lokalnej "1"
+  L1
+    LINENUMBER 4 L1
+    ICONST_0 // Załaduj stałą wartość 0 na stos
+    ISTORE 2 // Zapisz wartość 0 do zmiennej lokalnej "2"
+  L2
+    LINENUMBER 5 L2
+    ICONST_0 // Załaduj stałą wartość 0 na stos
+    ISTORE 3 // Zapisz wartość 0 do zmiennej lokalnej "3"
+  L3
+    FRAME APPEND [I I I]
+    ILOAD 3 // Załaduj wartość zmiennej lokalnej "3" (zmienna "i") na stos
+    ILOAD 1 // Załaduj wartość zmiennej lokalnej "1" (długość tablicy) na stos
+    IF_ICMPGE L4 // Jeśli zmienna "i" jest większa lub równa długości tablicy, przejdź do etykiety L4
+  L5
+    LINENUMBER 6 L5
+    ICONST_1 // Załaduj stałą wartość 1 na stos
+    ISTORE 4 // Zapisz wartość 1 do zmiennej lokalnej "4"
+  L6
+    FRAME APPEND [I]
+    ILOAD 4 // Załaduj wartość zmiennej lokalnej "4" (zmienna "j") na stos
+    ILOAD 1 // Załaduj wartość zmiennej lokalnej "1" (długość tablicy) na stos
+    ILOAD 3 // Załaduj wartość zmiennej lokalnej "3" (zmienna "i") na stos
+    ISUB // Odejmij wartość zmiennej lokalnej "3" (zmienna "i") od wartości zmiennej lokalnej "1" (długość tablicy)
+    IF_ICMPGE L7 // Jeśli zmienna "j" jest większa lub równa długości tablicy minus "i", przejdź do etykiety L7
+  L8
+    LINENUMBER 7 L8
+    ALOAD 0 // Załaduj referencję do tablicy na stos
+    ILOAD 4 // Załaduj wartość zmiennej lokalnej "4" (zmienna "j") na stos
+    ICONST_1 // Załaduj stałą wartość 1 na stos
+    ISUB // Odejmij wartość zmiennej lokalnej "4" (zmienna "j") od wartości 1
+    IALOAD // Załaduj wartość z tablicy na stos (element "j-1")
+    ALOAD 0 // Załaduj referencję do tablicy na stos
+    ILOAD 4 // Załaduj wartość zmiennej lokalnej "4" (zmienna "j") na stos
+    IALOAD // Załaduj wartość z tablicy na stos (element "j")
+    IF_ICMPLE L9 // Jeśli element "j-1" jest większy lub równy elementowi "j", przejdź do etykiety L9
+  L10
+    LINENUMBER 9 L10
+    ALOAD 0 // Załaduj referencję do tablicy na stos
+    ILOAD 4 // Załaduj wartość zmiennej lokalnej "4" (zmienna "j") na stos
+    ICONST_1 // Załaduj stałą wartość 1 na stos
+    ISUB // Odejmij wartość zmiennej lokalnej "4" (zmienna "j") od wartości 1
+    IALOAD // Załaduj wartość z tablicy na stos (element "j-1")
+    ISTORE 2 // Zapisz wartość na stosie (element "j-1") do zmiennej lokalnej "2" (zmienna "temp")
+  L11
+    LINENUMBER 10 L11
+    ALOAD 0 // Załaduj referencję do tablicy na stos
+    ILOAD 4 // Załaduj wartość zmiennej lokalnej "4" (zmienna "j") na stos
+    ICONST_1 // Załaduj stałą wartość 1 na stos
+    ISUB // Odejmij wartość zmiennej lokalnej "4" (zmienna "j") od wartości 1
+    ALOAD 0 // Załaduj referencję do tablicy na stos
+    ILOAD 4 // Załaduj wartość zmiennej lokalnej "4" (zmienna "j") na stos
+    IALOAD // Załaduj wartość z tablicy na stos (element "j")
+    IASTORE // Zapisz wartość ze stosu (element "j") do tablicy
+   L12
+    LINENUMBER 11 L12
+    ALOAD 0 // Załaduj referencję do tablicy na stos
+    ILOAD 4 // Załaduj wartość zmiennej lokalnej "4" (zmienna "j") na stos
+    ILOAD 2 // Załaduj wartość zmiennej lokalnej "2" (zmienna "temp") na stos
+    IASTORE // Zapisz wartość ze stosu (wartość z zmiennej lokalnej "2") do tablicy (element "j-1")
+   L9
+    LINENUMBER 6 L9
+    FRAME SAME
+    IINC 4 1 // Zwiększ wartość zmiennej lokalnej "4" (zmienna "j") o 1
+    GOTO L6 // Przejdź do etykiety L6
+   L7
+    LINENUMBER 5 L7
+    FRAME CHOP 1
+    IINC 3 1 // Zwiększ wartość zmiennej lokalnej "3" (zmienna "i") o 1
+    GOTO L3 // Przejdź do etykiety L3
+   L4
+    LINENUMBER 17 L4
+    FRAME CHOP 1
+    RETURN // Zakończ wykonanie metody
+   L13
+    LOCALVARIABLE j I L6 L7 4 // Deklaracja zmiennej lokalnej "j" o typie int
+    LOCALVARIABLE i I L3 L4 3 // Deklaracja zmiennej lokalnej "i" o typie int
+    LOCALVARIABLE arr [I L0 L13 0 // Deklaracja zmiennej lokalnej "arr" będącej tablicą o typie int
+    LOCALVARIABLE n I L1 L13 1 // Deklaracja zmiennej lokalnej "n" o typie int
+    LOCALVARIABLE temp I L2 L13 2 // Deklaracja zmiennej lokalnej "temp" o typie int
+    MAXSTACK = 4 // Maksymalna głębokość stosu
+    MAXLOCALS = 5 // Maksymalna liczba zmiennych lokalnych
+
+// access flags 0x9 (public, static)
+// method: main([Ljava/lang/String;)V
+public static main([Ljava/lang/String;)V
+   L0
+    LINENUMBER 19 L0
+    BIPUSH 7 // Załaduj wartość 7 na stos
+    NEWARRAY T_INT // Utwórz nową tablicę o rozmiarze 7
+    DUP // Duplikuj referencję do nowej tablicy na stos
+    ICONST_0 // Załaduj stałą wartość 0 na stos
+    ICONST_3 // Załaduj stałą wartość 3 na stos
+    IASTORE // Zapisz wartość 3 do elementu 0 tablicy
+    DUP // Duplikuj referencję do nowej tablicy na stos
+    ICONST_1 // Załaduj stałą wartość 1 na stos
+    BIPUSH 60 // Załaduj wartość 60 na stos
+    IASTORE // Zapisz wartość 60 do elementu 1 tablicy
+    DUP // Duplikuj referencję do nowej tablicy na stos
+    ICONST_2 // Załaduj stałą wartość 2 na stos
+    BIPUSH 35 // Załaduj wartość 35 na stos
+    IASTORE // Zapisz wartość 35 do elementu 2 tablicy
+    DUP // Duplikuj referencję do nowej tablicy na stos
+    ICONST_3 // Załaduj stałą wartość 3 na stos
+    ICONST_2 // Załaduj stałą wartość 2 na stos
+    IASTORE // Zapisz wartość 2 do elementu 3 tablicy
+    DUP // Duplikuj referencję do nowej tablicy na stos
+    ICONST_4 // Załaduj stałą wartość 4 na stos
+    BIPUSH 45 // Załaduj wartość 45 na stos
+    IASTORE // Zapisz wartość 45 do elementu 4 tablicy
+    DUP // Duplikuj referencję do nowej tablicy na stos
+    ICONST_5 // Załaduj stałą wartość 5 na stos
+    SIPUSH 320 // Załaduj wartość 320 na stos
+    IASTORE // Zapisz wartość 320 do elementu 5 tablicy
+    DUP // Duplikuj referencję do nowej tablicy na stos
+    BIPUSH 6 // Załaduj wartość 6 na stos
+    ICONST_5 // Załaduj stałą wartość 5 na stos
+    IASTORE // Zapisz wartość 5 do elementu 6 tablicy
+    ASTORE 1 // Zapisz referencję do tablicy do zmiennej lokalnej "1" (args)
+   L1
+    LINENUMBER 27 L1
+    ALOAD 1 // Załaduj referencję do tablicy na stos
+    INVOKESTATIC Bubble.bubbleSort ([I)V // Wywołaj statyczną metodę bubbleSort na tablicy
+   L2
+    LINENUMBER 34 L2
+    RETURN // Zakończ wykonanie metody
+   L3
+    LOCALVARIABLE args [Ljava/lang/String; L0 L3 0 // Deklaracja zmiennej lokalnej "args" będącej tablicą typu String
+    LOCALVARIABLE arr [I L1 L3 1 // Deklaracja zmiennej lokalnej "arr" będącej tablicą o typie int
+    MAXSTACK = 4 // Maksymalna głębokość stosu
+    MAXLOCALS = 2 // Maksymalna liczba zmiennych lokalnych
+}
